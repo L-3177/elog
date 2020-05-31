@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StreamUtils;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -29,7 +30,7 @@ public class ExcelController implements Serializable {
 
 
 //      把数据写成excel表格
-    @RequestMapping("/export")
+    @PostMapping("/export")
     public void exportExcel(@RequestParam(value = "json") List<PersonEntity> list, HttpServletResponse response) throws Exception {
 
         if(CollectionUtils.isEmpty(list)){
