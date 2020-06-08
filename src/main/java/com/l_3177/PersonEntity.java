@@ -7,7 +7,7 @@ import lombok.Data;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Data
-@JsonIgnoreProperties(ignoreUnknown = true) 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PersonEntity {
 
 
@@ -28,16 +28,20 @@ public class PersonEntity {
     @JsonProperty("casNum")
     private String cardNo;
 
-    @Excel(name="邮箱",width = 25)
-    @JsonProperty("casEmail")
-    private String email;
+//    @Excel(name="邮箱",width = 25)
+//    @JsonProperty("casEmail")
+//    private String email;
+//
+//    @Excel(name="单面电话",width = 20)
+//    @JsonProperty("casMobPho")
+//    private String phone;
+//
+//    @Excel(name="催收手别")
+//    @JsonProperty("casClCount")
+//    private String count;
 
-    @Excel(name="单面电话",width = 20)
-    @JsonProperty("casMobPho")
-    private String phone;
-
-    @Excel(name="催收手别")
-    @JsonProperty("casClCount")
-    private String count;
+    @Excel(name="交警号码",width = 30)
+    @JsonProperty("jjPhone")
+    private String jjPhone;
 
 }
