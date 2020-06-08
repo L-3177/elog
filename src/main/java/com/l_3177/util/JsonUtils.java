@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import java.io.File;
 import java.io.IOException;
 
 public class JsonUtils {
@@ -42,4 +43,8 @@ public class JsonUtils {
         return mapper.readValue(content, javaType);
     }
 
+    public static <T> T parseFileToCollection(File file,Class<T> collectionClass, Class<?>... eleClasses) throws IOException {
+        JavaType javaType = mapper.getTypeFactory().constructParametricType(collectionClass, eleClasses);
+        return mapper.readValue(file, javaType);
+    }
 }

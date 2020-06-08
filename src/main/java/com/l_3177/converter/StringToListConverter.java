@@ -13,6 +13,7 @@ import java.util.List;
 public class StringToListConverter implements Converter<String, List<PersonEntity>> {
 
     @Override
+    @SuppressWarnings("unchecked")
     public List<PersonEntity> convert(String s) {
         List<PersonEntity> list = new ArrayList<PersonEntity>();
         try {

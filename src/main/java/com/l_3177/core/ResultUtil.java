@@ -5,8 +5,8 @@ public class ResultUtil {
     private ResultUtil() {
     }
 
-    public static Result getSuccess(Object obj) {
-        Result result = new Result();
+    public static <T> Result<T> getSuccess(T obj) {
+        Result<T> result = new Result<>();
         result.setCode(ResultEnum.SUCCESS.getCode());
         result.setMsg(ResultEnum.SUCCESS.getMsg());
         result.setData(obj);
